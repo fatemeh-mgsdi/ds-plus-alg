@@ -3,7 +3,7 @@
 # Return any array that satisfies this condition.
 
 
-def sortArrayByParity(self, A):
+def sortArrayByParity(A):
     if len(A) > 1:
         counter = 0
         odd_counter = 0

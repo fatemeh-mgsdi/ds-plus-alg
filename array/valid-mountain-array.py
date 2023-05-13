@@ -32,26 +32,3 @@ def validMountainArray(arr):
     return True
 
 print(validMountainArray([14,82,89,84,79,70,70,68,67,66,63,60,58,54,44,43,32,28,26,25,22,15,13,12,10,8,7,5,4,3]))
-#
-# tmp1 = None
-# counter = 0
-# for i in range(len(arr) - 1):
-#     if arr[i] > arr[i + 1]:
-#         tmp1 = i
-#         break
-#     elif arr[i] < arr[i + 1]:
-#         counter += 1
-#     else:
-#         break
-#
-# if tmp1 is not None and counter >= 1:
-#
-#     for j in range(tmp1, len(arr) - 1):
-#         if arr[j] < arr[j + 1]:
-#             return False
-#         elif arr[j] == arr[j + 1]:
-#             return False
-#
-#     return True
-# else:
-#     return False

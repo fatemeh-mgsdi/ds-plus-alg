@@ -24,3 +24,5 @@ def replaceElements(arr):
         if max_from_right < tmp:
             max_from_right = tmp
     return arr
+
+replaceElements([17,18,5,4,6,1])

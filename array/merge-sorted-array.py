@@ -12,6 +12,7 @@
 # Explanation: The arrays we are merging are [1,2,3] and [2,5,6].
 # The result of the merge is [1,2,2,3,5,6] with the underlined elements coming from nums1.
 
+
 def merge(nums1, m, nums2, n):
     pointer = len(nums1) - 1
     m = m - 1
@@ -28,7 +29,18 @@ def merge(nums1, m, nums2, n):
         pointer -= 1
 
     if n >= 0:
-        nums1[:n + 1] = nums2[:n + 1]
+        nums1[: n + 1] = nums2[: n + 1]
     print(nums1)
 
-merge(nums1 = [1,2,3,0,0,0], m = 3, nums2 = [0, 1, 2,5,6], n = 3)
+
+merge(nums1=[1, 2, 3, 0, 0, 0], m=3, nums2=[0, 1, 2, 5, 6], n=3)
+
+
+def merge(self, nums1, m, nums2, n):
+    """
+    :type nums1: List[int]
+    :type m: int
+    :type nums2: List[int]
+    :type n: int
+    """
+    nums1[:] = sorted(nums1[:m] + nums2[:n])

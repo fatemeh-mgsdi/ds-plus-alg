@@ -6,22 +6,18 @@
 # Input: nums = [0,1,0,3,12]
 # Output: [1,3,12,0,0]
 
-def moveZeroes(arr):
 
-    i = 0
-    j = len(arr) - 1
+def moveZeroes(nums):
 
-    while i<len(arr) and j>0:
-        if arr[i] == 0:
-            arr.pop(i)
-            arr.insert(j, 0)
-            j -= 1
-        else:
-            i += 1
+    # // Start with the first position
+    insertPosition = 0
 
-    print(arr)
+    for i in range(0, len(nums)):
+        #  Fill all non-zero numbers
+        if nums[i] != 0:
+            nums[insertPosition] = nums[i]
+            insertPosition += 1
 
-
-moveZeroes([0, 0, 1])
-
-
+    while insertPosition < nums.length:
+        insertPosition += 1
+        nums[insertPosition] = 0
