@@ -1,35 +1,23 @@
 # Given the head of a linked list and an integer val, remove all the nodes of the linked list that has Node.val == val, and return the new head
 
-
 class ListNode:
-    def __init__(self, val=0, next=None):
-        self.val = val
-        self.next = next
+    def __init__(self, x):
+        self.val = x
+        self.next = None
 
-def removeElements(self, head, val):
-    if head is None:
-        return None
+class Solution:
+    def removeElements(self, head, val):
+           # approach: traverse list and remove next node if its value == val
 
-    while head.val == val:
-        head = head.next
-        if not head:
-            return None
+        # if value matched at head node
+        while head and head.val == val:
+            head = head.next
 
-    new_head = ListNode(head.val)
+        pointer = head
+        while pointer and pointer.next:
+            if pointer.next.val == val:
+                pointer.next = pointer.next.next
+            else:
+                pointer = pointer.next
 
-    cur = head.next
-    pre = new_head
-
-    while cur:
-        if cur.val != val:
-            new_node = ListNode(cur.val)
-
-            pre.next = new_node
-            pre = new_node
-
-        cur = cur.next
-
-    return new_head
-
-
-
+        return head
